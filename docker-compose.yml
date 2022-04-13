@@ -11,6 +11,22 @@ services:
     # command: -c /config/config.yml
     ports:
       - "8080:8080"
+    volumes:
+      - "./hapi-data:/hapi-data"
+#    environment:
+#      SPRING_CONFIG_LOCATION: 'file:///hapi-data/application.yaml'
+
+  fhir-mysql:
+    image: mysql:8.0.28
+    hostname: fhir-mysql.ga4gh.org
+    command: --lower_case_table_names=1
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'cohort'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'admin'
+      MYSQL_ROOT_PASSWORD: 'admin'
+
 
 
 

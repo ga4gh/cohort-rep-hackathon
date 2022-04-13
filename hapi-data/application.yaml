@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: 'jdbc:mysql://fhir-mysql.ga4gh.org:8080/cohort'
+    username: admin
+    password: admin
+    driverClassName: com.mysql.jdbc.Driver

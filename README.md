@@ -37,5 +37,5 @@ Project tracking for GA4GH Computable Cohort Representation Hackathons
 2. Within the repo use the command ```./gradlew build check test``` to build synthea for the first time
 3. To export the generated population in FHIR and CSV format, navigate to ```/src/main/resources/synthea.properties```
     i. Set ```exporter.fhir.bulk_data = true``` to enable FHIR
-    ii. Set ```exporter.csv.export = true`` to enable CSV
+    ii. Set ```exporter.csv.export = true``` to enable CSV
 4. Generate the dataset using ```./run_synthea -p 1000``` to generate a population of 1000

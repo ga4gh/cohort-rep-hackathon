@@ -1,0 +1,40 @@
+# docker-compose for Connect April 2022 demo
+# sets up Testbed API and UI services
+version: "3.9"
+services:
+  fhir-hapi:
+    image: hapiproject/hapi:v5.7.0
+    hostname: fhir-hapi.ga4gh.org
+    # volumes:
+    #   - "./config:/config"
+    #   - "./db:/db"
+    # command: -c /config/config.yml
+    ports:
+      - "8080:8080"
+
+
+
+
+
+
+
+
+#   testbed-api:
+#     image: ga4gh/ga4gh-testbed-api:0.1.0
+#     hostname: testbed-api.ga4gh.org
+#     volumes:
+#       - "./config:/config"
+#       - "./db:/db"
+#     command: -c /config/config.yml
+#     ports:
+#       - "4500:4500"
+#   testbed-ui:
+#     image: ga4gh/ga4gh-testbed-ui:0.1.1-connect
+#     hostname: testbed-ui.ga4gh.org
+#     ports:
+#       - "80:80"
+#   refget-local:
+#     image: ga4gh/refget-cloud:0.3.1
+#     hostname: refget-cloud.ga4gh.org
+#     ports:
+#       - "8888:8888"

@@ -29,3 +29,21 @@ Project tracking for GA4GH Computable Cohort Representation Hackathons
 3. Load sythetic FHIR population bundle into the FHIR server via Postman
 4. Test simple query with CQL IDE
 5. ...
+
+## 2. Generate Synthea population
+
+### via JAR file
+
+Requires Java on your local machine (tested with Java 11.0.6)
+
+First, download the v3.0.0 Synthea JAR file via a command line download tool, e.g. `wget`:
+```
+wget https://github.com/synthetichealth/synthea/releases/download/v3.0.0/synthea-with-dependencies.jar
+```
+
+Next, run synthea using the config file in this repo to export bulk FHIR and CSV data:
+```
+java -jar synthea-with-dependencies.jar -c synthea/config/synthea.properties -p 1000
+```
+
+The output data will be in the `./output` directory

@@ -1,31 +1,45 @@
 # docker-compose for Connect April 2022 demo
 # sets up Testbed API and UI services
-version: "3.9"
+version: "3.7"
 services:
   fhir-hapi:
     image: hapiproject/hapi:v5.7.0
     hostname: fhir-hapi.ga4gh.org
-    # volumes:
-    #   - "./config:/config"
-    #   - "./db:/db"
-    # command: -c /config/config.yml
     ports:
-      - "8080:8080"
-    volumes:
-      - "./hapi-data:/hapi-data"
-#    environment:
-#      SPRING_CONFIG_LOCATION: 'file:///hapi-data/application.yaml'
+      - "8080:8080"  
+    # configs:
+    #   - source: hapi
+    #     target: /data/hapi/application.yaml
+    # volumes:
+      # - "./hapi-data:/data/hapi"
+      # - "./hapi-data:/hapi-data"
+    # environment:
+      # SPRING_DATASOURCE_URL: 'jdbc:postgresql://localhost:5432/hapi_dstu3'
+      # SPRING_DATASOURCE_URL: 'jdbc:mysql://localhost:3306/hapi_dstu3'
+      # SPRING_DATASOURCE_USERNAME: admin
+      # SPRING_DATASOURCE_PASSWORD: admin
+      # SPRING_DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
+      # SPRING_DATASOURCE_DRIVERCLASSNAME: com.mysql.jdbc.Driver
+      # SPRING_CONFIG_LOCATION: 'file:///data/hapi/application.yaml'
+      # SPRING_CONFIG_LOCATION: 'file:///hapi-data/application.yaml'
 
-  fhir-mysql:
-    image: mysql:8.0.28
-    hostname: fhir-mysql.ga4gh.org
-    command: --lower_case_table_names=1
-    restart: always
-    environment:
-      MYSQL_DATABASE: 'cohort'
-      MYSQL_USER: 'admin'
-      MYSQL_PASSWORD: 'admin'
-      MYSQL_ROOT_PASSWORD: 'admin'
+  # fhir-mysql:
+  #   image: mysql:8.0.28
+  #   hostname: fhir-mysql.ga4gh.org
+  #   command: --lower_case_table_names=1
+  #   restart: always
+  #   environment:
+  #     MYSQL_DATABASE: 'cohort'
+  #     MYSQL_USER: 'admin'
+  #     MYSQL_PASSWORD: 'admin'
+  #     MYSQL_ROOT_PASSWORD: 'admin'
+
+configs:
+  hapi:
+    external: true
+# volumes:
+#     hapi-data:
+#       external: true
 
 
 

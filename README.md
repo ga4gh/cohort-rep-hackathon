@@ -26,7 +26,7 @@ Project tracking for GA4GH Computable Cohort Representation Hackathons
 ### Pre-hackathon deployment steps
 1. Deploy a FHIR server - TBD: Deploy locally or in the cloud
 2. Generate Sythea population
-3. Load sythetic FHIR population bundle into the FHIR server
+3. Load synthetic population into the FHIR server
 4. Test simple query with CQL IDE
 
 ## 1. Deploy a FHIR server
@@ -90,3 +90,51 @@ python filter.py
 ```
 
 assuming that Python 3 has been installed on your system.
+
+## 3. Load synthetic population into the FHIR server
+
+Now, we will load the asthma enriched dataset into the local FHIR server we started in step 1. There is a custom python script [`upload.py`](./upload.py) that will handle the upload of the relevant records. The upload script leverages the FHIR REST API documented at http://localhost:8080/fhir/swagger-ui/index.html. Specifcally, the script makes HTTP requests to the `PUT /fhir/{model}/{id}` REST endpoint for each model and record in the dataset.
+
+The upload step can simply be run be executing:
+```
+python upload.py
+```
+
+### Explore data using FHIR REST API
+
+Now that the data has been ingested, we can now explore it by making HTTP requests to the FHIR REST API. Using your preferred HTTP client tool (such as Postman), you can now browse instances of the FHIR models you uploaded, including:
+* `Patient`
+* `Condition`
+* `Encounter`
+* `Observation`
+* `DiagnosticReport`
+* `DocumentReference`
+* `Immunization`
+* `Procedure`
+* `Practitioner`
+* `PractitionerRole`
+* `Organization`
+* `Location`
+
+The URL template for viewing these instances is:
+```
+GET http://{serverBaseUrl}/fhir/{model}/{id}
+```
+
+For example, to view a `Patient` with id `02dade42-9887-12c3-979e-5df8f35319f7`, you would make a request to
+```
+GET http://localhost:8080/fhir/Patient/02dade42-9887-12c3-979e-5df8f35319f7
+```
+for the local FHIR server, or
+
+```
+GET https://cohort.ga4gh-demo.org/fhir/Patient/02dade42-9887-12c3-979e-5df8f35319f7
+```
+
+for the web-accessible server
+
+A full list of patient IDs is available [here](./PATIENT_IDS.md)
+
+## 4. Test simple query with CQL IDE
+
+Coming soon...

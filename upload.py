@@ -60,7 +60,7 @@ def upload_from_json_list_file(input_filename, fhir_dir, fhir_server_url):
 def main():
 
     # parse program inputs from environment
-    default_fhir_dir = os.path.join("output", "filtered", "00", "fhir")
+    default_fhir_dir = os.path.join("output", "synthea", "filtered", "fhir")
     custom_fhir_dir = os.getenv("GA4GH_DEMO_FHIR_DIR")
     fhir_dir = custom_fhir_dir if custom_fhir_dir else default_fhir_dir
 

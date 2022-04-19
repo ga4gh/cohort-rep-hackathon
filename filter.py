@@ -25,11 +25,11 @@ def main():
     ##################################################
     # PARSE PROGRAM INPUTS
     ##################################################
-    default_input_dir = os.path.join("output", "general", "00", "fhir")
+    default_input_dir = os.path.join("output", "synthea", "raw", "fhir")
     custom_input_dir = os.getenv("GA4GH_DEMO_INPUT_DIR")
     input_dir = custom_input_dir if custom_input_dir else default_input_dir
 
-    default_output_dir = os.path.join("output", "filtered", "00", "fhir")
+    default_output_dir = os.path.join("output", "synthea", "filtered", "fhir")
     custom_output_dir = os.getenv("GA4GH_DEMO_OUTPUT_DIR")
     output_dir = custom_output_dir if custom_output_dir else default_output_dir
 

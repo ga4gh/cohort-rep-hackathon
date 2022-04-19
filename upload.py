@@ -1,4 +1,3 @@
-import sys
 import os
 import json
 import requests
@@ -32,15 +31,36 @@ class FhirInstanceUploader(object):
     def upload(self):
         payload_json = json.loads(self.payload)
         object_id = payload_json["id"]
-        # print("uploading %s %s" % (self.model, object_id))
         url = "%sfhir/%s/%s" % (self.fhir_server_url, self.model, object_id)
         response = requests.put(url, json=payload_json)
+
+        if response.status_code != 200 and response.status_code != 201:
+            print("failed to upload %s %s" % (self.model, object_id))
+            print(response.status_code)
+            print(response.text)
+            print("---")
+
         return response.status_code
+
+def upload_from_json_list_file(input_filename, fhir_dir, fhir_server_url):
+    input_file = open(os.path.join(fhir_dir, input_filename + ".json"), "r")
+    all_json = json.load(input_file)
+    counts_d = {}
+    for entry_json in all_json["entry"]:
+        resource_json = entry_json["resource"]
+        resource_type = resource_json["resourceType"]
+        resource_id = resource_json["id"]
+        url = "%sfhir/%s/%s" % (fhir_server_url, resource_type, resource_id)
+        response = requests.put(url, json=resource_json)
+        if response.status_code not in counts_d.keys():
+            counts_d[response.status_code] = 0
+        counts_d[response.status_code] += 1
+    print(input_filename + " upload attempt finished: " + str(counts_d))
 
 def main():
 
     # parse program inputs from environment
-    default_fhir_dir = os.path.join("output", "fhir")
+    default_fhir_dir = os.path.join("output", "filtered", "00", "fhir")
     custom_fhir_dir = os.getenv("GA4GH_DEMO_FHIR_DIR")
     fhir_dir = custom_fhir_dir if custom_fhir_dir else default_fhir_dir
 
@@ -49,34 +69,21 @@ def main():
     fhir_server_url = custom_fhir_server_url if custom_fhir_server_url else default_fhir_server_url
     if fhir_server_url.endswith("/") == False:
         fhir_server_url += "/"
+    
+    # upload Practitioner and Hospital Information
+    upload_from_json_list_file("PractitionerInformation", fhir_dir, fhir_server_url)
+    upload_from_json_list_file("HospitalInformation", fhir_dir, fhir_server_url)
 
     # run the upload in the correct sequence
     ordered_models = [
-        # "Patient",
-        # "Device",
-
-
-
-        # AllergyIntolerance.ndjson
-        # CarePlan.ndjson
-        # CareTeam.ndjson
-        # Claim.ndjson
-        # Condition.ndjson
-        # DiagnosticReport.ndjson
-        # DocumentReference.ndjson
-        # Encounter.ndjson
-        # ExplanationOfBenefit.ndjson
-        # ImagingStudy.ndjson
-        # Immunization.ndjson
-        # Medication.ndjson
-        # MedicationAdministration.ndjson
-        # MedicationRequest.ndjson
-        # Observation.ndjson
-        # Procedure.ndjson
-        # Provenance.ndjson
-        # SupplyDelivery.ndjson
-        # hospitalInformation1649904926114.json
-        # practitionerInformation1649904926114.json
+        "Patient",
+        "Encounter",
+        "Condition",
+        "Immunization",
+        "Observation",
+        "DiagnosticReport",
+        "DocumentReference",
+        "Procedure"
     ]
 
     for model in ordered_models:

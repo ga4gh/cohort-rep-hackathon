@@ -30,9 +30,30 @@ Project tracking for GA4GH Computable Cohort Representation Hackathons
 4. Test simple query with CQL IDE
 5. ...
 
-## 2. Generate Synthea population
+## 1. Deploy a FHIR server
 
-### via JAR file
+### Deploy HAPI FHIR server locally
+
+Using the HAPI FHIR server definition in [`docker-compose.yml`](./docker-compose.yml), we can spin up the server using:
+```
+docker-compose up -d
+```
+
+Wait a few minutes for the server setup process to complete. Once this is done, you should confirm the service is available by visiting the following URLs via web browser:
+* http://localhost:8080/ - Landing page
+* http://localhost:8080/fhir/swagger-ui/index.html - OpenAPI definition of the FHIR web API 
+
+**Note:** This requires `docker` and `docker-compose` to be installed on your local machine.
+
+### Cloud deployment
+
+For the hackathon, the GA4GH tech team has spun up a web-accessible HAPI FHIR instance via Amazon Web Services (AWS). This service is available at https://cohort.ga4gh-demo.org/ . For example:
+* https://cohort.ga4gh-demo.org/ - Landing page
+* https://cohort.ga4gh-demo.org/fhir/swagger-ui/index.html - OpenAPI definition of the FHIR web API
+
+The cloud-based instance has already been populated with a synthetic asthma dataset for the purpose of the hackathon. See the next sections for how the synthetic data was generated and uploaded.
+
+## 2. Generate Synthea population
 
 Requires Java on your local machine (tested with Java 11.0.6)
 
@@ -41,9 +62,34 @@ First, download the v3.0.0 Synthea JAR file via a command line download tool, e.
 wget https://github.com/synthetichealth/synthea/releases/download/v3.0.0/synthea-with-dependencies.jar
 ```
 
-Next, run synthea using the config file in this repo to export bulk FHIR and CSV data:
+In this example, we will be generating two small, synthetic datasets for the hackathon demo:
+1. A general/random patient dataset which may or may not have any asthma patients (~100 patients)
+2. A dataset containing only asthma patients (~10 patients)
+
+We will eventually upload both synthetic datasets to the HAPI FHIR server.
+
+### Generate 100 patient random dataset
+
+To generate the general/random patient dataset, run synthea using the config file in this repo to export bulk FHIR and CSV data:
 ```
-java -jar synthea-with-dependencies.jar -c synthea/config/synthea.properties -p 1000
+java -jar synthea-with-dependencies.jar \
+    -p 1000 \
+    -c synthea/config/synthea.properties \
+    --exporter.baseDirectory "./output/general/01"
 ```
 
-The output data will be in the `./output` directory
+The output data will be in the `./output/general/00` directory. You may rerun the data generation, in which case you can use separate directories for each attempt. (e.g. `./output/general/01`, `./output/general/02`, `./output/general/03`, etc.)
+
+### Generate 10 patient asthma dataset
+
+To generate the asthma patient dataset, run synthea using the config file in this repo to export bulk FHIR and CSV data:
+```
+java -jar synthea-with-dependencies.jar \
+    -p 10 \
+    -m Asthma \
+    -c synthea/config/synthea.properties \
+    --exporter.baseDirectory "./output/asthma/00"
+```
+
+The output data will be in the `./output/asthma/00` directory. You may rerun the data generation, in which case you can use separate directories for each attempt. (e.g. `./output/asthma/01`, `./output/asthma/02`, `./output/asthma/03`, etc.)
+

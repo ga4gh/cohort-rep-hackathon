@@ -7,64 +7,7 @@ services:
     hostname: fhir-hapi.ga4gh.org
     ports:
       - "8080:8080"  
-    # configs:
-    #   - source: hapi
-    #     target: /data/hapi/application.yaml
-    # volumes:
-      # - "./hapi-data:/data/hapi"
-      # - "./hapi-data:/hapi-data"
-    # environment:
-      # SPRING_DATASOURCE_URL: 'jdbc:postgresql://localhost:5432/hapi_dstu3'
-      # SPRING_DATASOURCE_URL: 'jdbc:mysql://localhost:3306/hapi_dstu3'
-      # SPRING_DATASOURCE_USERNAME: admin
-      # SPRING_DATASOURCE_PASSWORD: admin
-      # SPRING_DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
-      # SPRING_DATASOURCE_DRIVERCLASSNAME: com.mysql.jdbc.Driver
-      # SPRING_CONFIG_LOCATION: 'file:///data/hapi/application.yaml'
-      # SPRING_CONFIG_LOCATION: 'file:///hapi-data/application.yaml'
-
-  # fhir-mysql:
-  #   image: mysql:8.0.28
-  #   hostname: fhir-mysql.ga4gh.org
-  #   command: --lower_case_table_names=1
-  #   restart: always
-  #   environment:
-  #     MYSQL_DATABASE: 'cohort'
-  #     MYSQL_USER: 'admin'
-  #     MYSQL_PASSWORD: 'admin'
-  #     MYSQL_ROOT_PASSWORD: 'admin'
 
 configs:
   hapi:
     external: true
-# volumes:
-#     hapi-data:
-#       external: true
-
-
-
-
-
-
-
-
-
-#   testbed-api:
-#     image: ga4gh/ga4gh-testbed-api:0.1.0
-#     hostname: testbed-api.ga4gh.org
-#     volumes:
-#       - "./config:/config"
-#       - "./db:/db"
-#     command: -c /config/config.yml
-#     ports:
-#       - "4500:4500"
-#   testbed-ui:
-#     image: ga4gh/ga4gh-testbed-ui:0.1.1-connect
-#     hostname: testbed-ui.ga4gh.org
-#     ports:
-#       - "80:80"
-#   refget-local:
-#     image: ga4gh/refget-cloud:0.3.1
-#     hostname: refget-cloud.ga4gh.org
-#     ports:
-#       - "8888:8888"

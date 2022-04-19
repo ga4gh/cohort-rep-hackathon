@@ -26,9 +26,8 @@ Project tracking for GA4GH Computable Cohort Representation Hackathons
 ### Pre-hackathon deployment steps
 1. Deploy a FHIR server - TBD: Deploy locally or in the cloud
 2. Generate Sythea population
-3. Load sythetic FHIR population bundle into the FHIR server via Postman
+3. Load sythetic FHIR population bundle into the FHIR server
 4. Test simple query with CQL IDE
-5. ...
 
 ## 1. Deploy a FHIR server
 
@@ -62,34 +61,32 @@ First, download the v3.0.0 Synthea JAR file via a command line download tool, e.
 wget https://github.com/synthetichealth/synthea/releases/download/v3.0.0/synthea-with-dependencies.jar
 ```
 
-In this example, we will be generating two small, synthetic datasets for the hackathon demo:
-1. A general/random patient dataset which may or may not have any asthma patients (~100 patients)
-2. A dataset containing only asthma patients (~10 patients)
+In this example, we will be generating a small, synthetic dataset containing asthma patients and patients without asthma. We will then perform a filter step so that only a mini dataset that is enriched for asthma is uploaded to the FHIR server.
 
-We will eventually upload both synthetic datasets to the HAPI FHIR server.
+### Generate 1000 patient random dataset
 
-### Generate 100 patient random dataset
+First, create the raw output directory that synthea will write to:
+```
+mkdir -p output/synthea/raw
+```
 
-To generate the general/random patient dataset, run synthea using the config file in this repo to export bulk FHIR and CSV data:
+Next, run synthea using the config file in this repo to generate the random patient dataset, exporting it as both bulk FHIR and CSV data:
 ```
 java -jar synthea-with-dependencies.jar \
     -p 1000 \
     -c synthea/config/synthea.properties \
-    --exporter.baseDirectory "./output/general/01"
+    --exporter.baseDirectory "./output/synthea/raw/"
 ```
 
-The output data will be in the `./output/general/00` directory. You may rerun the data generation, in which case you can use separate directories for each attempt. (e.g. `./output/general/01`, `./output/general/02`, `./output/general/03`, etc.)
+The output data will be in the `./output/synthea/raw` directory.
 
-### Generate 10 patient asthma dataset
+### Filter random dataset for enriched asthma dataset
 
-To generate the asthma patient dataset, run synthea using the config file in this repo to export bulk FHIR and CSV data:
+A custom python script [`filter.py`](./filter.py) has been included in the repo. This script produces a mini dataset of 100+ patients that are enriched for asthma incidences. The resulting mini dataset will contain all patients with asthma from the original synthetic dataset, plus 100 patients without asthma.
+
+The enriched mini-dataset uploaded to the AWS instance has been included in the repository at [`output/synthea/filtered/fhir`](./output/synthea/filtered/fhir), so you do not need to run the filter step. However, the filter step can be run with:
 ```
-java -jar synthea-with-dependencies.jar \
-    -p 10 \
-    -m Asthma \
-    -c synthea/config/synthea.properties \
-    --exporter.baseDirectory "./output/asthma/00"
+python filter.py
 ```
 
-The output data will be in the `./output/asthma/00` directory. You may rerun the data generation, in which case you can use separate directories for each attempt. (e.g. `./output/asthma/01`, `./output/asthma/02`, `./output/asthma/03`, etc.)
-
+assuming that Python 3 has been installed on your system.

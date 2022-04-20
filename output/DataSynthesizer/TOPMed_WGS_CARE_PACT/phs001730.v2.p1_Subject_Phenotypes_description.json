@@ -1,0 +1,244 @@
+{
+   "meta": {
+      "num_tuples": 10,
+      "num_attributes": 10,
+      "num_attributes_in_BN": 9,
+      "all_attributes": [
+         "SUBJECT_ID",
+         "age",
+         "SEX",
+         "Race",
+         "BMI",
+         "Affection_Status",
+         "smoke_current",
+         "asthma_hospital_Yes12mo",
+         "steroids_Yes12mo",
+         "delta1"
+      ],
+      "candidate_keys": [
+         "SUBJECT_ID"
+      ],
+      "non_categorical_string_attributes": [],
+      "attributes_in_BN": [
+         "age",
+         "SEX",
+         "Race",
+         "BMI",
+         "Affection_Status",
+         "smoke_current",
+         "asthma_hospital_Yes12mo",
+         "steroids_Yes12mo",
+         "delta1"
+      ]
+   },
+   "attribute_description": {
+      "SUBJECT_ID": {
+         "name": "SUBJECT_ID",
+         "data_type": "Integer",
+         "is_categorical": false,
+         "is_candidate_key": true,
+         "min": 1000,
+         "max": 10000,
+         "missing_rate": 0.0,
+         "distribution_bins": [],
+         "distribution_probabilities": []
+      },
+      "age": {
+         "name": "age",
+         "data_type": "Float",
+         "is_categorical": false,
+         "is_candidate_key": false,
+         "min": 6.421918,
+         "max": 10.632877,
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            6.778082,
+            10.120548,
+            7.0,
+            9.569863,
+            7.213699,
+            10.632877,
+            6.70137,
+            6.421918,
+            9.134247,
+            8.216438
+         ],
+         "distribution_probabilities": [
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+         ]
+      },
+      "SEX": {
+         "name": "SEX",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "Female",
+         "max": "Male",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "Male",
+            "Female"
+         ],
+         "distribution_probabilities": [
+            0.5853658536585366,
+            0.4146341463414634
+         ]
+      },
+      "Race": {
+         "name": "Race",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "Hispanic/Black",
+         "max": "Hispanic/White",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "Hispanic/White",
+            "Hispanic/Black"
+         ],
+         "distribution_probabilities": [
+            0.9024390243902439,
+            0.0975609756097561
+         ]
+      },
+      "BMI": {
+         "name": "BMI",
+         "data_type": "Float",
+         "is_categorical": false,
+         "is_candidate_key": false,
+         "min": 14.377855415211,
+         "max": 30.8771929824561,
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            16.2626409216177,
+            20.8924502623883,
+            30.8771929824561,
+            14.377855415211,
+            21.7000434000868,
+            25.5068698955168,
+            19.7507010693824,
+            16.2222363798103,
+            16.1307040057,
+            29.6545753260299
+         ],
+         "distribution_probabilities": [
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+         ]
+      },
+      "Affection_Status": {
+         "name": "Affection_Status",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "Case",
+         "max": "Case",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "Case"
+         ],
+         "distribution_probabilities": [
+            1.0
+         ]
+      },
+      "smoke_current": {
+         "name": "smoke_current",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "FALSE",
+         "max": "FALSE",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "FALSE"
+         ],
+         "distribution_probabilities": [
+            1.0
+         ]
+      },
+      "asthma_hospital_Yes12mo": {
+         "name": "asthma_hospital_Yes12mo",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "1",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "0",
+            "1"
+         ],
+         "distribution_probabilities": [
+            0.7317073170731707,
+            0.2682926829268293
+         ]
+      },
+      "steroids_Yes12mo": {
+         "name": "steroids_Yes12mo",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "1",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "1",
+            "0"
+         ],
+         "distribution_probabilities": [
+            0.5853658536585366,
+            0.4146341463414634
+         ]
+      },
+      "delta1": {
+         "name": "delta1",
+         "data_type": "Float",
+         "is_categorical": false,
+         "is_candidate_key": false,
+         "min": 2.479339,
+         "max": 26.3473049,
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            21.341463,
+            11.258278,
+            3.144654,
+            14.379085,
+            13.114754,
+            26.3473049,
+            4.6875,
+            6.42201799,
+            17.757009,
+            2.479339
+         ],
+         "distribution_probabilities": [
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+         ]
+      }
+   }
+}

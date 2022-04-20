@@ -1,0 +1,950 @@
+{
+   "meta": {
+      "num_tuples": 10,
+      "num_attributes": 36,
+      "num_attributes_in_BN": 35,
+      "all_attributes": [
+         "SUBJECT_ID",
+         "AGE",
+         "SEX",
+         "AFFECTION_STATUS",
+         "IGE_BATCH",
+         "AGE_IGE",
+         "RAW_PHADIATOP_PAU_L",
+         "AGE_ONSET_ASTHMA",
+         "ALLERGIC_RHINITIS",
+         "BRONCHODILATOR_PILLS",
+         "BRONCHODILATOR_PILLS_RELIEF",
+         "STEROID_PILLS",
+         "STEROID_PILLS_RELIEF",
+         "BRONCHODILATOR_INHALERS",
+         "BRONCHODILATOR_INHALERS_RELIEF",
+         "STEROID_INHALERS",
+         "STEROID_INHALERS_RELIEF",
+         "CROMOLYN_INHALERS",
+         "CROMOLYN_INHALERS_RELIEF",
+         "BRONCHODILATOR_NEBULIZER",
+         "BRONCHODILATOR_NEBULIZER_RELIEF",
+         "FEV1_PREBD",
+         "FVC_PREBD",
+         "FEV1_FVC",
+         "EVER_SMOKED_CIGARETTES",
+         "AGE_START_SMOKING",
+         "CURRENT_SMOKING",
+         "AGE_STOPPED_SMOKING",
+         "DAILY_NR_CIGARETTES",
+         "EVER_SMOKED_CIGARS",
+         "EVER_SMOKED_PIPE",
+         "MOTHER_SMOKED",
+         "FATHER_SMOKED",
+         "LOG10_IGE_NG_ML",
+         "WEIGHT_KG",
+         "HEIGHT_CM"
+      ],
+      "candidate_keys": [
+         "SUBJECT_ID"
+      ],
+      "non_categorical_string_attributes": [],
+      "attributes_in_BN": [
+         "AGE",
+         "SEX",
+         "AFFECTION_STATUS",
+         "IGE_BATCH",
+         "AGE_IGE",
+         "RAW_PHADIATOP_PAU_L",
+         "AGE_ONSET_ASTHMA",
+         "ALLERGIC_RHINITIS",
+         "BRONCHODILATOR_PILLS",
+         "BRONCHODILATOR_PILLS_RELIEF",
+         "STEROID_PILLS",
+         "STEROID_PILLS_RELIEF",
+         "BRONCHODILATOR_INHALERS",
+         "BRONCHODILATOR_INHALERS_RELIEF",
+         "STEROID_INHALERS",
+         "STEROID_INHALERS_RELIEF",
+         "CROMOLYN_INHALERS",
+         "CROMOLYN_INHALERS_RELIEF",
+         "BRONCHODILATOR_NEBULIZER",
+         "BRONCHODILATOR_NEBULIZER_RELIEF",
+         "FEV1_PREBD",
+         "FVC_PREBD",
+         "FEV1_FVC",
+         "EVER_SMOKED_CIGARETTES",
+         "AGE_START_SMOKING",
+         "CURRENT_SMOKING",
+         "AGE_STOPPED_SMOKING",
+         "DAILY_NR_CIGARETTES",
+         "EVER_SMOKED_CIGARS",
+         "EVER_SMOKED_PIPE",
+         "MOTHER_SMOKED",
+         "FATHER_SMOKED",
+         "LOG10_IGE_NG_ML",
+         "WEIGHT_KG",
+         "HEIGHT_CM"
+      ]
+   },
+   "attribute_description": {
+      "SUBJECT_ID": {
+         "name": "SUBJECT_ID",
+         "data_type": "Integer",
+         "is_categorical": false,
+         "is_candidate_key": true,
+         "min": 1000,
+         "max": 10000,
+         "missing_rate": 0.0,
+         "distribution_bins": [],
+         "distribution_probabilities": []
+      },
+      "AGE": {
+         "name": "AGE",
+         "data_type": "Integer",
+         "is_categorical": false,
+         "is_candidate_key": false,
+         "min": 1,
+         "max": 43,
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            1,
+            14,
+            12,
+            11,
+            2,
+            15,
+            17,
+            16,
+            10,
+            43
+         ],
+         "distribution_probabilities": [
+            0.2840690978886756,
+            0.10364683301343569,
+            0.09021113243761995,
+            0.08637236084452975,
+            0.08445297504798464,
+            0.07677543186180422,
+            0.0710172744721689,
+            0.06909788867562379,
+            0.0671785028790787,
+            0.0671785028790787
+         ]
+      },
+      "SEX": {
+         "name": "SEX",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "1",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "2",
+            "1",
+            "NA"
+         ],
+         "distribution_probabilities": [
+            0.4623444662737394,
+            0.4119187950229208,
+            0.12573673870333987
+         ]
+      },
+      "AFFECTION_STATUS": {
+         "name": "AFFECTION_STATUS",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "1",
+            "2",
+            "0",
+            "NA"
+         ],
+         "distribution_probabilities": [
+            0.44597249508840864,
+            0.36411263916175507,
+            0.18925998690242304,
+            0.0006548788474132286
+         ]
+      },
+      "IGE_BATCH": {
+         "name": "IGE_BATCH",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "DACI_07_2015",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "DACI_07_2016",
+            "DACI_07_2015",
+            "LEGACY"
+         ],
+         "distribution_probabilities": [
+            0.3929273084479371,
+            0.2776686313032089,
+            0.27635887360838246,
+            0.05304518664047151
+         ]
+      },
+      "AGE_IGE": {
+         "name": "AGE_IGE",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "11",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "15",
+            "16",
+            "55",
+            "11",
+            "12",
+            "19",
+            "17",
+            "36",
+            "28"
+         ],
+         "distribution_probabilities": [
+            0.7478260869565218,
+            0.031055900621118016,
+            0.02981366459627329,
+            0.02857142857142857,
+            0.02732919254658385,
+            0.02732919254658385,
+            0.02732919254658385,
+            0.02732919254658385,
+            0.02732919254658385,
+            0.026086956521739132
+         ]
+      },
+      "RAW_PHADIATOP_PAU_L": {
+         "name": "RAW_PHADIATOP_PAU_L",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0.01",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "<0.1",
+            "0.01",
+            "0.07",
+            "0.2",
+            "0.26",
+            "0.06",
+            "0.03",
+            "0.02",
+            "0.12"
+         ],
+         "distribution_probabilities": [
+            0.7153361344537815,
+            0.2373949579831933,
+            0.009453781512605043,
+            0.0063025210084033615,
+            0.005252100840336135,
+            0.005252100840336135,
+            0.005252100840336135,
+            0.005252100840336135,
+            0.005252100840336135,
+            0.005252100840336135
+         ]
+      },
+      "AGE_ONSET_ASTHMA": {
+         "name": "AGE_ONSET_ASTHMA",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "1",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "1",
+            "5",
+            "3",
+            "2",
+            "4",
+            "7",
+            "8",
+            "6",
+            "11"
+         ],
+         "distribution_probabilities": [
+            0.8202959830866808,
+            0.05778717406624384,
+            0.022551092318534183,
+            0.01973220577871741,
+            0.019027484143763217,
+            0.018322762508809022,
+            0.01338971106412967,
+            0.012684989429175477,
+            0.008456659619450317,
+            0.007751937984496125
+         ]
+      },
+      "ALLERGIC_RHINITIS": {
+         "name": "ALLERGIC_RHINITIS",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "0",
+            "1"
+         ],
+         "distribution_probabilities": [
+            0.43222003929273084,
+            0.3280943025540275,
+            0.23968565815324164
+         ]
+      },
+      "BRONCHODILATOR_PILLS": {
+         "name": "BRONCHODILATOR_PILLS",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "0",
+            "1"
+         ],
+         "distribution_probabilities": [
+            0.7485265225933202,
+            0.22855271774721678,
+            0.022920759659463
+         ]
+      },
+      "BRONCHODILATOR_PILLS_RELIEF": {
+         "name": "BRONCHODILATOR_PILLS_RELIEF",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "1",
+            "0"
+         ],
+         "distribution_probabilities": [
+            0.9764243614931237,
+            0.016371971185330715,
+            0.007203667321545514
+         ]
+      },
+      "STEROID_PILLS": {
+         "name": "STEROID_PILLS",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "0",
+            "1"
+         ],
+         "distribution_probabilities": [
+            0.7426326129666012,
+            0.23051735428945644,
+            0.026850032743942372
+         ]
+      },
+      "STEROID_PILLS_RELIEF": {
+         "name": "STEROID_PILLS_RELIEF",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "1",
+            "0"
+         ],
+         "distribution_probabilities": [
+            0.9738048461034708,
+            0.021611001964636542,
+            0.0045841519318926
+         ]
+      },
+      "BRONCHODILATOR_INHALERS": {
+         "name": "BRONCHODILATOR_INHALERS",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "1",
+            "0"
+         ],
+         "distribution_probabilities": [
+            0.7367387033398821,
+            0.16830386378519974,
+            0.09495743287491815
+         ]
+      },
+      "BRONCHODILATOR_INHALERS_RELIEF": {
+         "name": "BRONCHODILATOR_INHALERS_RELIEF",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "1",
+            "0"
+         ],
+         "distribution_probabilities": [
+            0.8369351669941061,
+            0.13686967910936476,
+            0.02619515389652914
+         ]
+      },
+      "STEROID_INHALERS": {
+         "name": "STEROID_INHALERS",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "0",
+            "1"
+         ],
+         "distribution_probabilities": [
+            0.7491814014407334,
+            0.137524557956778,
+            0.11329404060248854
+         ]
+      },
+      "STEROID_INHALERS_RELIEF": {
+         "name": "STEROID_INHALERS_RELIEF",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "1",
+            "0"
+         ],
+         "distribution_probabilities": [
+            0.8925998690242305,
+            0.09954158480681075,
+            0.007858546168958742
+         ]
+      },
+      "CROMOLYN_INHALERS": {
+         "name": "CROMOLYN_INHALERS",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "0",
+            "1"
+         ],
+         "distribution_probabilities": [
+            0.7544204322200393,
+            0.24492468893254749,
+            0.0006548788474132286
+         ]
+      },
+      "CROMOLYN_INHALERS_RELIEF": {
+         "name": "CROMOLYN_INHALERS_RELIEF",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "0"
+         ],
+         "distribution_probabilities": [
+            0.9986902423051736,
+            0.0013097576948264572
+         ]
+      },
+      "BRONCHODILATOR_NEBULIZER": {
+         "name": "BRONCHODILATOR_NEBULIZER",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "0",
+            "1"
+         ],
+         "distribution_probabilities": [
+            0.7472167648984938,
+            0.22527832351015062,
+            0.0275049115913556
+         ]
+      },
+      "BRONCHODILATOR_NEBULIZER_RELIEF": {
+         "name": "BRONCHODILATOR_NEBULIZER_RELIEF",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "1",
+            "0"
+         ],
+         "distribution_probabilities": [
+            0.9731499672560576,
+            0.020301244269810084,
+            0.006548788474132285
+         ]
+      },
+      "FEV1_PREBD": {
+         "name": "FEV1_PREBD",
+         "data_type": "Float",
+         "is_categorical": false,
+         "is_candidate_key": false,
+         "min": 1.55,
+         "max": 2.7,
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            1.55,
+            2.45,
+            2.1,
+            2.55,
+            1.91,
+            1.85,
+            2.18,
+            2.21,
+            1.8
+         ],
+         "distribution_probabilities": [
+            0.969558599695586,
+            0.0045662100456621,
+            0.00380517503805175,
+            0.00380517503805175,
+            0.00380517503805175,
+            0.0030441400304414,
+            0.0030441400304414,
+            0.0030441400304414,
+            0.0030441400304414,
+            0.00228310502283105
+         ]
+      },
+      "FVC_PREBD": {
+         "name": "FVC_PREBD",
+         "data_type": "Float",
+         "is_categorical": false,
+         "is_candidate_key": false,
+         "min": 1.88,
+         "max": 4.00,
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            2.37,
+            2.26,
+            3.62,
+            2.85,
+            2.34,
+            3.82,
+            1.88,
+            2.32,
+            2.29
+         ],
+         "distribution_probabilities": [
+            0.9747587230883443,
+            0.005196733481811432,
+            0.004454342984409799,
+            0.0022271714922048997,
+            0.0022271714922048997,
+            0.0022271714922048997,
+            0.0022271714922048997,
+            0.0022271714922048997,
+            0.0022271714922048997,
+            0.0022271714922048997
+         ]
+      },
+      "FEV1_FVC": {
+         "name": "FEV1_FVC",
+         "data_type": "String",
+         "is_categorical": false,
+         "is_candidate_key": false,
+         "min": 0.8,
+         "max": 1.00,
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            1,
+            0.82,
+            0.89,
+            0.88,
+            0.87,
+            0.91,
+            0.84,
+            0.8,
+            0.98
+         ],
+         "distribution_probabilities": [
+            0.9147685525349005,
+            0.011756061719324022,
+            0.011021307861866272,
+            0.011021307861866272,
+            0.01028655400440852,
+            0.009551800146950768,
+            0.008817046289493017,
+            0.008082292432035267,
+            0.007347538574577515,
+            0.007347538574577515
+         ]
+      },
+      "EVER_SMOKED_CIGARETTES": {
+         "name": "EVER_SMOKED_CIGARETTES",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "0",
+            "NA",
+            "1"
+         ],
+         "distribution_probabilities": [
+            0.5225933202357563,
+            0.4361493123772102,
+            0.0412573673870334
+         ]
+      },
+      "AGE_START_SMOKING": {
+         "name": "AGE_START_SMOKING",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "14",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "18",
+            "16",
+            "15",
+            "21",
+            "20",
+            "17",
+            "27",
+            "14",
+            "23"
+         ],
+         "distribution_probabilities": [
+            0.9689973614775725,
+            0.006596306068601583,
+            0.005936675461741425,
+            0.00395778364116095,
+            0.00395778364116095,
+            0.0032981530343007917,
+            0.002638522427440633,
+            0.001978891820580475,
+            0.0013192612137203166,
+            0.0013192612137203166
+         ]
+      },
+      "CURRENT_SMOKING": {
+         "name": "CURRENT_SMOKING",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "0",
+            "1"
+         ],
+         "distribution_probabilities": [
+            0.9404060248853962,
+            0.045841519318926,
+            0.0137524557956778
+         ]
+      },
+      "AGE_STOPPED_SMOKING": {
+         "name": "AGE_STOPPED_SMOKING",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "22",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "28",
+            "38",
+            "23",
+            "43",
+            "22",
+            "27",
+            "33",
+            "26",
+            "30"
+         ],
+         "distribution_probabilities": [
+            0.9867812293456707,
+            0.001982815598149372,
+            0.001982815598149372,
+            0.0013218770654329145,
+            0.0013218770654329145,
+            0.0013218770654329145,
+            0.0013218770654329145,
+            0.0013218770654329145,
+            0.0013218770654329145,
+            0.0013218770654329145
+         ]
+      },
+      "DAILY_NR_CIGARETTES": {
+         "name": "DAILY_NR_CIGARETTES",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "1",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "2",
+            "1",
+            "10",
+            "20",
+            "5",
+            "4",
+            "15",
+            "3",
+            "8"
+         ],
+         "distribution_probabilities": [
+            0.9381578947368423,
+            0.029605263157894742,
+            0.007894736842105263,
+            0.007236842105263159,
+            0.004605263157894738,
+            0.003289473684210527,
+            0.003289473684210527,
+            0.0026315789473684214,
+            0.001973684210526316,
+            0.0013157894736842107
+         ]
+      },
+      "EVER_SMOKED_CIGARS": {
+         "name": "EVER_SMOKED_CIGARS",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "0",
+            "NA",
+            "1",
+            "2"
+         ],
+         "distribution_probabilities": [
+            0.5258677144728225,
+            0.4715127701375246,
+            0.0019646365422396855,
+            0.0006548788474132286
+         ]
+      },
+      "EVER_SMOKED_PIPE": {
+         "name": "EVER_SMOKED_PIPE",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "0",
+            "NA",
+            "1",
+            "2"
+         ],
+         "distribution_probabilities": [
+            0.5206286836935167,
+            0.47085789129011135,
+            0.007203667321545514,
+            0.0013097576948264572
+         ]
+      },
+      "MOTHER_SMOKED": {
+         "name": "MOTHER_SMOKED",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "0",
+            "2",
+            "1"
+         ],
+         "distribution_probabilities": [
+            0.676489849377865,
+            0.31303208906352326,
+            0.005893909626719057,
+            0.0045841519318926
+         ]
+      },
+      "FATHER_SMOKED": {
+         "name": "FATHER_SMOKED",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "NA",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "NA",
+            "0",
+            "2",
+            "1"
+         ],
+         "distribution_probabilities": [
+            0.6496398166339228,
+            0.2665356908971841,
+            0.05828421741977735,
+            0.025540275049115917
+         ]
+      },
+      "LOG10_IGE_NG_ML": {
+         "name": "LOG10_IGE_NG_ML",
+         "data_type": "Float",
+         "is_categorical": false,
+         "is_candidate_key": false,
+         "min": 2.41763774,
+         "max": 3.00,
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            2.54157924,
+            2.97349731,
+            2.70035753,
+            2.41763774,
+            2.62324929,
+            2.4483971,
+            2.42553422,
+            2.49748254,
+            2.52633928
+         ],
+         "distribution_probabilities": [
+            0.9391575663026522,
+            0.0078003120124805,
+            0.0078003120124805,
+            0.0078003120124805,
+            0.0062402496099844005,
+            0.0062402496099844005,
+            0.0062402496099844005,
+            0.0062402496099844005,
+            0.0062402496099844005,
+            0.0062402496099844005
+         ]
+      },
+      "WEIGHT_KG": {
+         "name": "WEIGHT_KG",
+         "data_type": "Float",
+         "is_categorical": false,
+         "is_candidate_key": false,
+         "min": 37,
+         "max": 85,
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            75,
+            65.9,
+            81.8,
+            58,
+            37,
+            68,
+            55.5,
+            79.5,
+            76.8
+         ],
+         "distribution_probabilities": [
+            0.9686174724342665,
+            0.005089058524173029,
+            0.004240882103477525,
+            0.004240882103477525,
+            0.0033927056827820195,
+            0.0033927056827820195,
+            0.0033927056827820195,
+            0.0025445292620865146,
+            0.0025445292620865146,
+            0.0025445292620865146
+         ]
+      },
+      "HEIGHT_CM": {
+         "name": "HEIGHT_CM",
+         "data_type": "Float",
+         "is_categorical": false,
+         "is_candidate_key": false,
+         "min": 152.4,
+         "max": 180.0,
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            165.1,
+            172.7,
+            162.6,
+            160,
+            170.942,
+            167.6,
+            152.4,
+            174,
+            160.02
+         ],
+         "distribution_probabilities": [
+            0.9360655737704918,
+            0.013114754098360657,
+            0.00819672131147541,
+            0.00737704918032787,
+            0.006557377049180329,
+            0.0057377049180327875,
+            0.0057377049180327875,
+            0.0057377049180327875,
+            0.0057377049180327875,
+            0.0057377049180327875
+         ]
+      }
+   }
+}

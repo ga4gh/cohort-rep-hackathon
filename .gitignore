@@ -1,2 +1,5 @@
 synthea-with-dependencies.jar
 output/synthea/raw
+
+# Mac OS X
+.DS_Store

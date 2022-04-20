@@ -1,0 +1,63 @@
+{
+   "name": "bigquery.simulacrum.av_patient",
+   "description": "Patient table from Simulacrum data release, version 1.2.0-2017, 2021-01-19\n\nThis is a package of synthetic data based on cancer registration data from \nthe Cancer Outcomes and Services Dataset (COSD) and the Systemic Anti-Cancer \nTreatment (SACT) dataset collected by the National Cancer Registration and \nAnalysis Service (NCRAS).\n\nAny analysis performed on this synthetic data will not correspond exactly to \nanalysis performed on the real data. The synthetic data does not contain real \npatients but just mimics specific statistical properties of the real data. To \nminimise the potential for confusion with real data, organisational codes in \nthis extract have been obfuscated.\n\n\nFor more information on the Simulacrum and licensing details, please see\n  https://simulacrum.healthdatainsight.org.uk/",
+   "data_model": {
+      "description": "Patient table from Simulacrum data release, version 1.2.0-2017, 2021-01-19\n\nThis is a package of synthetic data based on cancer registration data from \nthe Cancer Outcomes and Services Dataset (COSD) and the Systemic Anti-Cancer \nTreatment (SACT) dataset collected by the National Cancer Registration and \nAnalysis Service (NCRAS).\n\nAny analysis performed on this synthetic data will not correspond exactly to \nanalysis performed on the real data. The synthetic data does not contain real \npatients but just mimics specific statistical properties of the real data. To \nminimise the potential for confusion with real data, organisational codes in \nthis extract have been obfuscated.\n\n\nFor more information on the Simulacrum and licensing details, please see\n  https://simulacrum.healthdatainsight.org.uk/",
+      "name": "simulacrum_release_v1.2.0.2017_patient",
+      "data_model": {
+         "$id": "",
+         "description": "simulacrum_release_v1.2.0.2017",
+         "$schema": "http://json-schema.org/draft-07/schema",
+         "properties": {
+            "PATIENTID": {
+               "description": "Pseudonymised patient ID Note: The format of this field in the Simulacrum is deliberately different from the format of pseudonymised patient id for real individuals. For real individuals PATIENTID, MERGED_PATIENT_ID and other linkage IDs are different and stored in different formats.",
+               "type": "integer"
+            },
+            "SEX": {
+               "description": "Sex",
+               "type": "integer"
+            },
+            "LINKNUMBER": {
+               "description": "Pseudonymised cross-dataset linkage ID Note: The format of this field in the Simulacrum is deliberately different from the format of the original linkage ID for real individuals. Data is identical to that in AV_PATIENT and the field is present for convenience. For real individuals PATIENTID, MERGED_PATIENT_ID and this ID are different and stored in different formats.",
+               "type": "integer"
+            },
+            "ETHNICITY": {
+               "description": "Ethnicity",
+               "type": "text"
+            },
+            "DEATHCAUSECODE_1A": {
+               "description": "As provided with death notification Note: Codes are in ICD-10 format, and may be a comma-separated list",
+               "type": "text"
+            },
+            "DEATHCAUSECODE_1B": {
+               "description": "As provided with death notification Note: Codes are in ICD-10 format, and may be a comma-separated list",
+               "type": "text"
+            },
+            "DEATHCAUSECODE_1C": {
+               "description": "As provided with death notification Note: Codes are in ICD-10 format, and may be a comma-separated list",
+               "type": "text"
+            },
+            "DEATHCAUSECODE_2": {
+               "description": "As provided with death notification Note: Codes are in ICD-10 format, and may be a comma-separated list",
+               "type": "text"
+            },
+            "DEATHCAUSECODE_UNDERLYING": {
+               "description": "As provided with death notification Note: Codes are in ICD-10 format, and may be a comma-separated list",
+               "type": "text"
+            },
+            "DEATHLOCATIONCODE": {
+               "description": "Code of the location (type) where the patient died, e.g. patients home, hospice etc.",
+               "type": "text"
+            },
+            "NEWVITALSTATUS": {
+               "description": "Vital status of the patient",
+               "type": "text"
+            },
+            "VITALSTATUSDATE": {
+               "description": "Date of vital status Note: If the patient has embarked or died, this is the corresponding date. If the patient is alive, this is the last date of follow-up.",
+               "type": "text"
+            }
+         }
+      }
+   }
+}

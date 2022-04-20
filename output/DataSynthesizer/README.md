@@ -6,6 +6,7 @@ For each dataset the following is provided
 
 - The description file used to describe the data to be generated
 - The generated data as a csv file
+- A Data Connect schema (*.data_dict.json) for each dataset
 
 In these examples the description files were generated from dbGaP variable reports that provide frequency distributions for each variable in a study.
 

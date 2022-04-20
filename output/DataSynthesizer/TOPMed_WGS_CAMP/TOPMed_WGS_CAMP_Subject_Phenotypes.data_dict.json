@@ -1,0 +1,133 @@
+{
+   "name": "bigquery.dbgap_synth.TOPMed_WGS_CAMP_Subject_Phenotypes",
+   "data_model": {
+      "description": "This subject phenotypes data table includes subject's asthma status, gender, age, race, height, weight, BMI, and smoking status (n=3 variables; ever, current, and former).",
+      "$id": "dbgap:pht009836.v2",TOPMed_WGS_CAMP_Subject_Phenotypes
+      "properties": {
+         "gender": {
+            "$id": "dbgap:phv00426560.v2",
+            "description": "Gender of participant",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "1",
+                  "title": "Male"
+               },
+               {
+                  "const": "2",
+                  "title": "Female"
+               }
+            ]
+         },
+         "race": {
+            "$id": "dbgap:phv00426562.v2",
+            "description": "Race of participant",
+            "type": "string"
+         },
+         "SUBJECT_ID": {
+            "$id": "dbgap:phv00426559.v2",
+            "description": "De-identified Subject ID",
+            "type": "string"
+         },
+         "weight": {
+            "$id": "dbgap:phv00426565.v2",
+            "description": "Weight in kg",
+            "type": "decimal",
+            "$unit": "kg"
+         },
+         "asthma": {
+            "$id": "dbgap:phv00493726.v1",
+            "description": "Case control status of the subject for asthma",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "Unknown"
+               },
+               {
+                  "const": "1",
+                  "title": "Asthma case (proband)"
+               },
+               {
+                  "const": "2",
+                  "title": "Control"
+               }
+            ]
+         },
+         "current_smoker": {
+            "$id": "dbgap:phv00426568.v2",
+            "description": "Current smoking status",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "1",
+                  "title": "No"
+               },
+               {
+                  "const": "0",
+                  "title": "Unknown"
+               },
+               {
+                  "const": "2",
+                  "title": "Yes"
+               }
+            ]
+         },
+         "age": {
+            "$id": "dbgap:phv00426561.v2",
+            "description": "Age (for children) at randomization",
+            "type": "decimal",
+            "$unit": "years"
+         },
+         "former_smoker": {
+            "$id": "dbgap:phv00426569.v2",
+            "description": "Former smoking status",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "1",
+                  "title": "No"
+               },
+               {
+                  "const": "0",
+                  "title": "Unknown"
+               },
+               {
+                  "const": "2",
+                  "title": "Yes"
+               }
+            ]
+         },
+         "height": {
+            "$id": "dbgap:phv00426564.v2",
+            "description": "Height  in cm",
+            "type": "decimal",
+            "$unit": "cm"
+         },
+         "bmi": {
+            "$id": "dbgap:phv00426566.v2",
+            "description": "BMI",
+            "type": "decimal"
+         },
+         "ever_smoker": {
+            "$id": "dbgap:phv00426567.v2",
+            "description": "Ever smoked",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "1",
+                  "title": "No"
+               },
+               {
+                  "const": "0",
+                  "title": "Unknown"
+               },
+               {
+                  "const": "2",
+                  "title": "Yes"
+               }
+            ]
+         }
+      }
+   }
+}

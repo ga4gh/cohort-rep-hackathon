@@ -1,0 +1,80 @@
+{
+   "name": "bigquery.dbgap_synth.TOPMed_WGS_CARE_PACT_Subject_Phenotypes",
+   "data_model": {
+      "description": "This subject phenotypes data table includes subject's age, sex, race, BMI, affection status for asthma, smoking status, hospital admission for asthma, prescribed oral steroids for asthma use, and delta FEV1 measurements.",
+      "$id": "dbgap:pht010132.v1",
+      "properties": {
+         "SUBJECT_ID": {
+            "$id": "dbgap:phv00430283.v1",
+            "description": "De-identified Subject ID",
+            "type": "string"
+         },
+         "SEX": {
+            "$id": "dbgap:phv00430285.v1",
+            "description": "Gender of participant",
+            "type": "string"
+         },
+         "Race": {
+            "$id": "dbgap:phv00430286.v1",
+            "description": "Race of participant",
+            "type": "string"
+         },
+         "Affection_Status": {
+            "$id": "dbgap:phv00430288.v1",
+            "description": "Case or Control for asthma",
+            "type": "string"
+         },
+         "asthma_hospital_Yes12mo": {
+            "$id": "dbgap:phv00430290.v1",
+            "description": "In the last 12 months, has participant been hospitalized because of asthma?",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes"
+               }
+            ]
+         },
+         "age": {
+            "$id": "dbgap:phv00430284.v1",
+            "description": "Subject age",
+            "type": "decimal",
+            "$unit": "years"
+         },
+         "BMI": {
+            "$id": "dbgap:phv00430287.v1",
+            "description": "Body Mass Index calculated from Height and Weight",
+            "type": "decimal"
+         },
+         "smoke_current": {
+            "$id": "dbgap:phv00430289.v1",
+            "description": "Does participant currently smoke at least 1 cig per day?",
+            "type": "string"
+         },
+         "steroids_Yes12mo": {
+            "$id": "dbgap:phv00430291.v1",
+            "description": "In the last 12 months, has participant been prescribed oral steroids (such as prednisone pills or prelone liquid) to help control asthma?",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes"
+               }
+            ]
+         },
+         "delta1": {
+            "$id": "dbgap:phv00430292.v1",
+            "description": "Bronchodilator Response after 4 puffs of Proventil HFA Albuterol",
+            "type": "decimal"
+         }
+      }
+   }
+}

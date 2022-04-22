@@ -9,12 +9,12 @@ Project tracking for GA4GH Computable Cohort Representation Hackathons
 - [OMOP](https://www.ohdsi.org/data-standardization/the-common-data-model/) - Similar to HL7 FHIR used primariliy in research and observational study settings
 
 #### Community Phenotypes
-- [HDR UK AsthmaPhenotypes](https://phenotypes.healthdatagateway.org/phenotypes/?search=Asthma&tagids=&search_form=basic-form&page=1) - Example phenotypes from the HDR UK Phenotype library
+- [HDR UK Asthma Phenotypes](https://phenotypes.healthdatagateway.org/phenotypes/?search=Asthma&tagids=&search_form=basic-form&page=1) - Example phenotypes from the HDR UK Phenotype library
 - [PheKB Asthma Phenotype](https://phekb.org/phenotype/asthma) - Asthma phenotype from PheKB - slightly dated
 
 #### Tools
 - [hapi-fhir-jpaserver-starter](https://github.com/hapifhir/hapi-fhir-jpaserver-starter) - Non-production FHIR server
-- [microsoft/fhir-server](https://github.com/microsoft/fhir-server) - production quality FHIRR server
+- [microsoft/fhir-server](https://github.com/microsoft/fhir-server) - production quality FHIR server
 - [Synthea](https://github.com/synthetichealth/synthea) - Synthetic population generator
 - [CQL IDE](https://cql-runner.dataphoria.org/) - CQL IDE user interface uses [CQL Engine](https://github.com/DBCG/cql_engine)
 - [CQL-to-ELM Translator](https://github.com/cqframework/clinical_quality_language/blob/master/Src/java/cql-to-elm/OVERVIEW.md)

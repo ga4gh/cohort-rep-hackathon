@@ -1,2 +1,8 @@
 synthea-with-dependencies.jar
 output/synthea/raw
+
+# IPython/Jupyter
+.ipynb_checkpoints
+
+# Mac OS X
+.DS_Store

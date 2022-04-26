@@ -1,0 +1,605 @@
+{
+   "name": "bigquery.dbgap_synth.TOPMed_WGS_BAGS_Subject_Phenotypes",
+   "data_model": {
+      "description": "This subject phenotype table includes age, sex, and affection status for asthma. Additional variables have been added: smoking status (n=9 variables; includes mother and father smoking status), asthma age of onset, allergic rhinitis, weight, height, IgE measurements (n=3 variables), phadiatop measurements, spirometry measurements (n=3 variables), bronchodilator pills/inhalers/nebulizer (n=6 variables), steroid pills/inhalers (n=4 variables), and cromolyn inhalers (n=2 variables).",
+      "$id": "dbgap:pht005905.v3",
+      "properties": {
+         "AGE_START_SMOKING": {
+            "$id": "dbgap:phv00375340.v1",
+            "description": "Answer to \"At what age did you start smoking?\"",
+            "type": "integer, encoded value",
+            "$unit": "years",
+            "oneOf": [
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "STEROID_PILLS": {
+            "$id": "dbgap:phv00375324.v1",
+            "description": "Steroid/prednisone pills (current use according to health questionnaire)",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "SEX": {
+            "$id": "dbgap:phv00273212.v2",
+            "description": "Sex of participant",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "1",
+                  "title": "Male"
+               },
+               {
+                  "const": "2",
+                  "title": "Female"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "BRONCHODILATOR_INHALERS": {
+            "$id": "dbgap:phv00375326.v1",
+            "description": "Bronchodilator inhalers (current use according to health questionnaire)",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "FEV1_PREBD": {
+            "$id": "dbgap:phv00375334.v1",
+            "description": "FEV1 = Forced Expiratory Volume 1 (pre-bronchodilator)",
+            "type": "decimal, encoded value",
+            "$unit": "liters/second",
+            "oneOf": [
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "EVER_SMOKED_PIPE": {
+            "$id": "dbgap:phv00375345.v1",
+            "description": "Answer to \"Have you ever smoked a pipe?\"",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes ever"
+               },
+               {
+                  "const": "2",
+                  "title": "Yes currently"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "STEROID_INHALERS_RELIEF": {
+            "$id": "dbgap:phv00375329.v1",
+            "description": "Relief from steroid inhalers",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "LOG10_IGE_NG_ML": {
+            "$id": "dbgap:phv00375316.v2",
+            "description": "Log10 (Total serum IgE in ng/ml)",
+            "type": "decimal, encoded value",
+            "$unit": "ng/ml",
+            "oneOf": [
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "BRONCHODILATOR_NEBULIZER_RELIEF": {
+            "$id": "dbgap:phv00375333.v1",
+            "description": "Relief from bronchodilator by nebulizer",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "AGE_IGE": {
+            "$id": "dbgap:phv00375318.v1",
+            "description": "Age of subject when sample used for total serum IgE measurement was collected",
+            "type": "integer, encoded value",
+            "$unit": "years",
+            "oneOf": [
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "AGE_ONSET_ASTHMA": {
+            "$id": "dbgap:phv00375320.v1",
+            "description": "Age of asthma onset",
+            "type": "integer, encoded value",
+            "$unit": "years",
+            "oneOf": [
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "SUBJECT_ID": {
+            "$id": "dbgap:phv00273210.v2",
+            "description": "De-identified Subject ID",
+            "type": "string"
+         },
+         "STEROID_PILLS_RELIEF": {
+            "$id": "dbgap:phv00375325.v1",
+            "description": "Relief from steroid/prednisone pills",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "CURRENT_SMOKING": {
+            "$id": "dbgap:phv00375341.v1",
+            "description": "Answer to \"Are you smoking now?\"",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "AGE_STOPPED_SMOKING": {
+            "$id": "dbgap:phv00375342.v1",
+            "description": "Answer to \"At what age did you stop smoking?\"",
+            "type": "integer, encoded value",
+            "$unit": "years",
+            "oneOf": [
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "AGE": {
+            "$id": "dbgap:phv00273211.v2",
+            "description": "Subject age at health questionnaire administration and lung function measurement",
+            "type": "integer, encoded value",
+            "$unit": "years",
+            "oneOf": [
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "HEIGHT_CM": {
+            "$id": "dbgap:phv00375338.v2",
+            "description": "Subject height in cm",
+            "type": "decimal, encoded value",
+            "$unit": "cm",
+            "oneOf": [
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "IGE_BATCH": {
+            "$id": "dbgap:phv00375317.v1",
+            "description": "Batch in which total serum IgE and phadiatop measurements were run",
+            "type": "string, encoded value",
+            "oneOf": [
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               },
+               {
+                  "title": "STRINGS"
+               }
+            ]
+         },
+         "EVER_SMOKED_CIGARETTES": {
+            "$id": "dbgap:phv00375339.v1",
+            "description": "Answer to \"Have you ever smoked cigarettes?\"",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "DAILY_NR_CIGARETTES": {
+            "$id": "dbgap:phv00375343.v1",
+            "description": "Answer to \"On average, during the years that you have smoked, how many cigarettes did you smoke daily?\"",
+            "type": "integer, encoded value",
+            "oneOf": [
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "BRONCHODILATOR_PILLS": {
+            "$id": "dbgap:phv00375322.v1",
+            "description": "Bronchodilator pills, capsules, or liquids (current use according to health questionnaire)",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "WEIGHT_KG": {
+            "$id": "dbgap:phv00375337.v2",
+            "description": "Subject weight in kg",
+            "type": "decimal, encoded value",
+            "$unit": "kg",
+            "oneOf": [
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "BRONCHODILATOR_PILLS_RELIEF": {
+            "$id": "dbgap:phv00375323.v1",
+            "description": "Relief from bronchodilator pills, capsules, or liquids",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "CROMOLYN_INHALERS": {
+            "$id": "dbgap:phv00375330.v1",
+            "description": "Cromolyn inhalers (current use according to health questionnaire)",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "MOTHER_SMOKED": {
+            "$id": "dbgap:phv00375346.v1",
+            "description": "Answer to \"Did your mother smoke when you were a baby?\"",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes light smoker"
+               },
+               {
+                  "const": "2",
+                  "title": "Yes heavy smoker"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "CROMOLYN_INHALERS_RELIEF": {
+            "$id": "dbgap:phv00375331.v1",
+            "description": "Relief from cromolyn inhalers",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "ALLERGIC_RHINITIS": {
+            "$id": "dbgap:phv00375321.v1",
+            "description": "Self-reported allergic rhinitis based on health questionnaire",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "FEV1_FVC": {
+            "$id": "dbgap:phv00375336.v1",
+            "description": "FEV1/FVC (pre-bronchodilator)",
+            "type": "decimal, encoded value",
+            "oneOf": [
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "STEROID_INHALERS": {
+            "$id": "dbgap:phv00375328.v1",
+            "description": "Steroid inhalers (current use according to health questionnaire)",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "BRONCHODILATOR_NEBULIZER": {
+            "$id": "dbgap:phv00375332.v1",
+            "description": "Bronchodilator by nebulizer (current use according to health questionnaire)",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "BRONCHODILATOR_INHALERS_RELIEF": {
+            "$id": "dbgap:phv00375327.v1",
+            "description": "Relief from bronchodilator inhalers",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "EVER_SMOKED_CIGARS": {
+            "$id": "dbgap:phv00375344.v1",
+            "description": "Answer to \"Have you ever smoked cigars?\"",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes ever"
+               },
+               {
+                  "const": "2",
+                  "title": "Yes currently"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "AFFECTION_STATUS": {
+            "$id": "dbgap:phv00273213.v2",
+            "description": "Case control status of the subject for asthma",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "Uncertain"
+               },
+               {
+                  "const": "1",
+                  "title": "Control"
+               },
+               {
+                  "const": "2",
+                  "title": "Case"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "RAW_PHADIATOP_PAU_L": {
+            "$id": "dbgap:phv00375319.v1",
+            "description": "Phadiatop measurements in PAU/L",
+            "type": "decimal, encoded value",
+            "$unit": "PAU/l",
+            "oneOf": [
+               {
+                  "const": "<0.1",
+                  "title": "Less than 0.1 PAU/l"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "FVC_PREBD": {
+            "$id": "dbgap:phv00375335.v1",
+            "description": "FVC = Forced Vital Capacity (pre-bronchodilator)",
+            "type": "decimal, encoded value",
+            "$unit": "liters",
+            "oneOf": [
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         },
+         "FATHER_SMOKED": {
+            "$id": "dbgap:phv00375347.v1",
+            "description": "Answer to \"Did your father smoke when you were a baby?\"",
+            "type": "encoded value",
+            "oneOf": [
+               {
+                  "const": "0",
+                  "title": "No"
+               },
+               {
+                  "const": "1",
+                  "title": "Yes light smoker"
+               },
+               {
+                  "const": "2",
+                  "title": "Yes heavy smoker"
+               },
+               {
+                  "const": "NA",
+                  "title": "Missing"
+               }
+            ]
+         }
+      }
+   }
+}

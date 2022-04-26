@@ -1,0 +1,295 @@
+{
+   "meta": {
+      "num_tuples": 200,
+      "num_attributes": 11,
+      "num_attributes_in_BN": 10,
+      "all_attributes": [
+         "SUBJECT_ID",
+         "gender",
+         "age",
+         "race",
+         "asthma",
+         "height",
+         "weight",
+         "bmi",
+         "ever_smoker",
+         "current_smoker",
+         "former_smoker"
+      ],
+      "candidate_keys": [
+         "SUBJECT_ID"
+      ],
+      "non_categorical_string_attributes": [],
+      "attributes_in_BN": [
+         "gender",
+         "age",
+         "race",
+         "asthma",
+         "height",
+         "weight",
+         "bmi",
+         "ever_smoker",
+         "current_smoker",
+         "former_smoker"
+      ]
+   },
+   "attribute_description": {
+      "SUBJECT_ID": {
+         "name": "SUBJECT_ID",
+         "data_type": "Integer",
+         "is_categorical": false,
+         "is_candidate_key": true,
+         "min": 1000,
+         "max": 10000,
+         "missing_rate": 0.0,
+         "distribution_bins": [],
+         "distribution_probabilities": []
+      },
+      "gender": {
+         "name": "gender",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "1",
+         "max": "2",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "2",
+            "1"
+         ],
+         "distribution_probabilities": [
+            0.5024006983849847,
+            0.49759930161501525
+         ]
+      },
+      "age": {
+         "name": "age",
+         "data_type": "Float",
+         "is_categorical": false,
+         "is_candidate_key": false,
+         "min": 5.82,
+         "max": 11.32,
+         "missing_rate": 1.6212814645308924,
+         "distribution_bins": [
+            5.82,
+            9.25,
+            10.41,
+            7.83,
+            9.94,
+            9.3,
+            9.76,
+            9.83,
+            7.29,
+            11.32
+         ],
+         "distribution_probabilities": [
+            0.125,
+            0.10416666666666667,
+            0.10416666666666667,
+            0.10416666666666667,
+            0.10416666666666667,
+            0.10416666666666667,
+            0.10416666666666667,
+            0.08333333333333334,
+            0.08333333333333334,
+            0.08333333333333334
+         ]
+      },
+      "race": {
+         "name": "race",
+         "data_type": "String",
+         "is_categorical": false,
+         "is_candidate_key": false,
+         "min": "African-American",
+         "max": "White",
+         "missing_rate": 1.6212814645308924,
+         "distribution_bins": [
+            "White",
+            "African-American",
+            "Hispanic",
+            "Other"
+         ],
+         "distribution_probabilities": [
+            0.6876430205949656,
+            0.13157894736842105,
+            0.09382151029748284,
+            0.08695652173913043
+         ]
+      },
+      "asthma": {
+         "name": "asthma",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "2",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "1",
+            "2",
+            "0"
+         ],
+         "distribution_probabilities": [
+            0.8467917939764295,
+            0.14011348756001746,
+            0.013094718463553033
+         ]
+      },
+      "height": {
+         "name": "height",
+         "data_type": "Float",
+         "is_categorical": false,
+         "is_candidate_key": false,
+         "min": 123.2,
+         "max": 140.4,
+         "missing_rate": 1.6424452133794694,
+         "distribution_bins": [
+            131.2,
+            132.4,
+            130.1,
+            123.2,
+            140.3,
+            140.4,
+            130.7,
+            125.0,
+            139.4,
+            126.6
+         ],
+         "distribution_probabilities": [
+            0.14814814814814814,
+            0.11111111111111109,
+            0.09259259259259257,
+            0.09259259259259257,
+            0.09259259259259257,
+            0.09259259259259257,
+            0.09259259259259257,
+            0.09259259259259257,
+            0.09259259259259257,
+            0.09259259259259257
+         ]
+      },
+      "weight": {
+         "name": "weight",
+         "data_type": "Float",
+         "is_categorical": false,
+         "is_candidate_key": false,
+         "min": 21.0,
+         "max": 33.0,
+         "missing_rate": 1.6303099885189438,
+         "distribution_bins": [
+            33.0,
+            25.5,
+            22.5,
+            24.0,
+            32.0,
+            21.0,
+            26.5,
+            27.5,
+            32.5,
+            31.0
+         ],
+         "distribution_probabilities": [
+            0.1263157894736842,
+            0.1263157894736842,
+            0.10526315789473684,
+            0.10526315789473684,
+            0.09473684210526315,
+            0.09473684210526315,
+            0.09473684210526315,
+            0.08421052631578946,
+            0.08421052631578946,
+            0.08421052631578946
+         ]
+      },
+      "bmi": {
+         "name": "bmi",
+         "data_type": "Float",
+         "is_categorical": false,
+         "is_candidate_key": false,
+         "min": 14.5235351,
+         "max": 17.63090664,
+         "missing_rate": 1.6516203703703705,
+         "distribution_bins": [
+            15.8239294,
+            16.59317438,
+            16.44857777,
+            15.6346053,
+            17.11105968,
+            15.56807507,
+            14.81213766,
+            14.5235351,
+            17.63090664,
+            15.67149375
+         ],
+         "distribution_probabilities": [
+            0.10526315789473684,
+            0.10526315789473684,
+            0.10526315789473684,
+            0.10526315789473684,
+            0.10526315789473684,
+            0.10526315789473684,
+            0.10526315789473684,
+            0.10526315789473684,
+            0.10526315789473684,
+            0.05263157894736842
+         ]
+      },
+      "ever_smoker": {
+         "name": "ever_smoker",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "2",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "1",
+            "2",
+            "0"
+         ],
+         "distribution_probabilities": [
+            0.8336970755128765,
+            0.16412047140986472,
+            0.0021824530772588395
+         ]
+      },
+      "current_smoker": {
+         "name": "current_smoker",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "2",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "1",
+            "2",
+            "0"
+         ],
+         "distribution_probabilities": [
+            0.8598865124399826,
+            0.13924050632911394,
+            0.0008729812309035357
+         ]
+      },
+      "former_smoker": {
+         "name": "former_smoker",
+         "data_type": "String",
+         "is_categorical": true,
+         "is_candidate_key": false,
+         "min": "0",
+         "max": "2",
+         "missing_rate": 0.0,
+         "distribution_bins": [
+            "1",
+            "2",
+            "0"
+         ],
+         "distribution_probabilities": [
+            0.8498472282845919,
+            0.14709733740724573,
+            0.0030554343081623746
+         ]
+      }
+   }
+}

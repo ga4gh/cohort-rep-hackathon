@@ -1,0 +1,13 @@
+# docker-compose for Connect April 2022 demo
+# sets up Testbed API and UI services
+version: "3.7"
+services:
+  fhir-hapi:
+    image: hapiproject/hapi:v5.7.0
+    hostname: fhir-hapi.ga4gh.org
+    ports:
+      - "8080:8080"  
+
+configs:
+  hapi:
+    external: true

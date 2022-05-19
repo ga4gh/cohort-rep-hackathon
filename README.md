@@ -9,12 +9,12 @@ Project tracking for GA4GH Computable Cohort Representation Hackathons
 - [OMOP](https://www.ohdsi.org/data-standardization/the-common-data-model/) - Similar to HL7 FHIR used primariliy in research and observational study settings
 
 #### Community Phenotypes
-- [HDR UK Asthma Phenotypes](https://phenotypes.healthdatagateway.org/phenotypes/?search=Asthma&tagids=&search_form=basic-form&page=1) - Example phenotypes from the HDR UK Phenotype library
+- [HDR UK AsthmaPhenotypes](https://phenotypes.healthdatagateway.org/phenotypes/?search=Asthma&tagids=&search_form=basic-form&page=1) - Example phenotypes from the HDR UK Phenotype library
 - [PheKB Asthma Phenotype](https://phekb.org/phenotype/asthma) - Asthma phenotype from PheKB - slightly dated
 
 #### Tools
 - [hapi-fhir-jpaserver-starter](https://github.com/hapifhir/hapi-fhir-jpaserver-starter) - Non-production FHIR server
-- [microsoft/fhir-server](https://github.com/microsoft/fhir-server) - production quality FHIR server
+- [microsoft/fhir-server](https://github.com/microsoft/fhir-server) - production quality FHIRR server
 - [Synthea](https://github.com/synthetichealth/synthea) - Synthetic population generator
 - [CQL IDE](https://cql-runner.dataphoria.org/) - CQL IDE user interface uses [CQL Engine](https://github.com/DBCG/cql_engine)
 - [CQL-to-ELM Translator](https://github.com/cqframework/clinical_quality_language/blob/master/Src/java/cql-to-elm/OVERVIEW.md)
@@ -23,11 +23,26 @@ Project tracking for GA4GH Computable Cohort Representation Hackathons
 
 ----
 
-### Pre-hackathon deployment steps
+# Pre-hackathon deployment steps
+
+## FHIR
+
 1. Deploy a FHIR server - TBD: Deploy locally or in the cloud
 2. Generate Sythea population
-3. Load synthetic population into the FHIR server
+3. Load sythetic FHIR population bundle into the FHIR server via Postman
 4. Test simple query with CQL IDE
+<<<<<<< Updated upstream
+5. ...
+=======
+
+## Data Connect
+
+1. Deploy Data Connect Server from https://github.com/ianfore/data-connect-trino
+2. Generate dbGaP and Synthea datasets
+3. Load datasets to Data Connect
+4. Query via Data Connect API 
+
+## FHIR Detailed Instructions
 
 ## 1. Deploy a FHIR server
 
@@ -138,3 +153,4 @@ A full list of patient IDs is available [here](./PATIENT_IDS.md)
 ## 4. Test simple query with CQL IDE
 
 Coming soon...
+>>>>>>> Stashed changes

@@ -38,9 +38,17 @@ Project tracking for GA4GH Computable Cohort Representation Hackathons
 ## Data Connect
 
 1. Deploy Data Connect Server from https://github.com/ianfore/data-connect-trino
+
+The instructions to deploy the above fork of  data-connect-trino are identical with one exception, to those described in Try a Reference Implementation [here](https://ga4gh-discovery.github.io/data-connect/docs/getting-started/provision-data/),. The container should mount a volume at /models which contains json schema files for data tables. The following example shows how to run the container via docker, with the schemas files in a local folder called  /yourpath/data-connect-models.
+
+```bash
+docker run --rm --name dnastack-data-connect -p 8089:8089 -v /yourpath/data-connect-models:/models -e TRINO_DATASOURCE_URL=https://trino-public.prod.dnastack.com -e SPRING_DATASOURCE_URL=jdbc:postgresql://host.docker.internal:15432/dataconnecttrino -e SPRING_PROFILES_ACTIVE=no-auth dnastack/data-connect-trino
+```
+
 2. Generate dbGaP and Synthea datasets
 3. Load datasets to Data Connect
-4. Query via Data Connect API 
+4. Deploy table schema file for each table locally in  /yourpath/data-connect-models. The naming convention for each schema file should be <catalog>.<schema>.<table_name>.data_dict.json
+5. Query via Data Connect API 
 
 ## FHIR Detailed Instructions
 

@@ -161,4 +161,6 @@ A full list of patient IDs is available [here](./PATIENT_IDS.md)
 ## 4. Test simple query with CQL IDE
 
 Coming soon...
+https://github.com/DBCG/cqf-ruler
+
 >>>>>>> Stashed changes

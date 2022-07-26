@@ -158,9 +158,54 @@ for the web-accessible server
 
 A full list of patient IDs is available [here](./PATIENT_IDS.md)
 
-## 4. Test simple query with CQL IDE
+## 4. CQL Example: Check for Asthma Patients
 
-Coming soon...
-https://github.com/DBCG/cqf-ruler
+This is a simple example on how to use CQL to identify whether a patient has a certain phenotype.
+
+### 1. Define CQL based on a phenotype definition
+Let's say we want to know if a patient was diagnosed with asthma as defined by the SNOMED CT code 195967001 (Asthma (disorder)). In CQL, that would look something like this:
+```
+library "AsthmaPhenotype" version '1.0.0'
+
+using FHIR version '4.0.1'
+
+include FHIRHelpers version '4.0.1'
+
+codesystem "SNOMED": 'http://snomed.info/sct'
+
+code "Asthma": '195967001' from "SNOMED"
+
+context Patient
+
+define "Asthma Diagnosis":
+    [Condition: "Asthma"]
+
+define "Has Asthma Diagnosis":
+    exists("Asthma Diagnosis")
+```
+On the first line we name our CQL library, a library in CQL is the high-level container in which the logic is stored. We then say that we use FHIR as our data model and specify the version (R4, 4.0.1). FHIRHelpers is another CQL library that is added as a dependency, this library enables the conversion between FHIR data types and CQL primatives, and enables the use of FHIRPath (like XPath, but for FHIR). Then, we define a code system (SNOMED CT in this case) and a code (the SNOMED asthma code as mentioned before). The next line 'context Patient' defines that all statements that follow this line have a FHIR Patient as their overall context. The statement "Asthma Diagnosis" returns any Condition resources that contain the specified SNOMED code for a given Patient. Lastly, "Has Asthma Diagnosis" returns either true or false, depending on if any Conditions with the specified code were found.
+
+### 2. Package the CQL as a FHIR Library (optional)
+This step is optional but allows for storing any CQL library embedded in a FHIR Library on a FHIR server, and evaluate the statements using FHIR's Clinical Reasoning module. Packaging the CQL can be done using the [CQF Tooling](https://github.com/cqframework/cqf-tooling).
+
+The Library with the embedded 'AsthmaPhenotype' CQL is included in the `/cql` folder [here](https://github.com/ga4gh/cohort-rep-hackathon/blob/main/cql/Library-AsthmaPhenotype.json).
+
+### 3. Evaluate the Library/CQL
+This is where we actually run our CQL statements for a specific Patient to get the result (asthma/no asthma). To evaluate a FHIR Library with an embedded CQL quality measure (like this example), you need a FHIR server that supports FHIR's Clinical Reasoning module. Here we can use the [CQF Ruler](https://github.com/DBCG/cqf-ruler) which is a HAPI FHIR server with some additional plugins. It can be easily run from a Docker container and the instructions above can be used to load synthetic Synthea data onto the server.
+
+Once the data and the Library are loaded onto the server you can run [$evaluate](http://build.fhir.org/ig/HL7/cqf-recommendations/OperationDefinition-cpg-library-evaluate.html)
+```
+GET http://localhost:8080/fhir/Library/AsthmaPhenotype/$evaluate?subject=Patient/54a0dc8e-5c3c-e294-6619-486afc4f9444
+```
+specifying Patient with ID `54a0dc8e-5c3c-e294-6619-486afc4f9444` as subject (an asthma patient according to our definition). 
+
+The server will then return the output of the CQL evaluation as a Parameters resource. For this example, the last part of the [output](https://github.com/ga4gh/cohort-rep-hackathon/blob/main/cql/Response-%24evaluate-example-patient.json) should look like:
+```
+        {
+            "name": "Has Asthma Diagnosis",
+            "valueBoolean": true
+        }
+```
+Which confirms that Patient `54a0dc8e-5c3c-e294-6619-486afc4f9444` is indeed an asthma patient (has a Condition resource with SNOMED CT code 195967001).
 
 >>>>>>> Stashed changes
